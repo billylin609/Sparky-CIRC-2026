@@ -1,0 +1,3 @@
+[submodule "src/vectornav"]
+	path = src/vectornav
+	url = https://code.umd.edu/robotics-at-maryland/qubo-software/vectornav.git

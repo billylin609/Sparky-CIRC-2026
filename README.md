@@ -3,16 +3,20 @@
 This is the template for setting up and using ROS2 Humble in a Docker container.
 This template is required by all UWRobotics software project.
 
+- [ ] Add Hardware test for VN300
+
 ## Project Structure
 ```
-docker_demo/
+Sparky-CIRC-2026/
 ├── Dockerfile              # Docker image definition
 ├── docker-compose.yml      # Container orchestration
+├── THIRD_PARTY_LICENSES.md # Third-party dependencies and licenses
 ├── scripts/                # Shell scripts
 │   ├── setup.sh            # Host-side: detects UID/GID, prepares .env
 │   ├── docker-entrypoint.sh# Container startup script
 │   └── build.sh            # Build script for ROS2 workspace
 ├── src/                    # ROS2 source code
+│   └── vectornav/          # VectorNav ROS2 package (submodule)
 └── README.md               # This file
 ```
 
@@ -173,6 +177,19 @@ ros2 param get /node_name parameter_name
 5. **Access files from VS Code:**
    - All files in `build/`, `install/`, and `log/` should be created your computer not docker user 
    - Edit source files in `src/` normally
+
+## Third-Party Dependencies
+
+This project includes the VectorNav ROS2 package as a git submodule. See `THIRD_PARTY_LICENSES.md` for licensing information.
+
+### Updating VectorNav Submodule
+```bash
+# Update to latest version
+git submodule update --remote src/vectornav
+
+# Initialize submodules (for new clones)
+git submodule update --init --recursive
+```
 
 ## Stopping the Environment
 
