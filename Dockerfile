@@ -1,4 +1,5 @@
-FROM osrf/ros:humble-desktop
+ARG ROS_BASE_IMAGE=osrf/ros:humble-desktop
+FROM ${ROS_BASE_IMAGE}
 
 # Install additional tools and complete testing/linting packages
 RUN apt-get update && apt-get install -y \

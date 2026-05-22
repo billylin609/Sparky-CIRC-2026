@@ -15,6 +15,18 @@ CURRENT_GID=$(id -g)
 
 echo "📋 Detected user: $CURRENT_USER (UID: $CURRENT_UID, GID: $CURRENT_GID)"
 
+# Detect CPU architecture and select the appropriate ROS base image + platform
+ARCH=$(uname -m)
+if [[ "$ARCH" == "aarch64" || "$ARCH" == "arm64" ]]; then
+    DOCKER_PLATFORM="linux/arm64"
+    ROS_BASE_IMAGE="arm64v8/ros:humble"
+    echo "📋 Detected ARM64 architecture — using $ROS_BASE_IMAGE"
+else
+    DOCKER_PLATFORM="linux/amd64"
+    ROS_BASE_IMAGE="osrf/ros:humble-desktop"
+    echo "📋 Detected AMD64 architecture — using $ROS_BASE_IMAGE"
+fi
+
 # Create .env file with current user's info
 cat > .env << EOF
 # Auto-generated environment variables for Docker user mapping
@@ -23,6 +35,8 @@ cat > .env << EOF
 USER_ID=$CURRENT_UID
 GROUP_ID=$CURRENT_GID
 USERNAME=$CURRENT_USER
+DOCKER_PLATFORM=$DOCKER_PLATFORM
+ROS_BASE_IMAGE=$ROS_BASE_IMAGE
 EOF
 
 echo "✅ Created .env file with your user settings"
