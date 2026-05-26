@@ -24,6 +24,12 @@ RUN apt-get update && apt-get install -y \
     ros-humble-ament-pep257 \
     ros-humble-ament-uncrustify \
     ros-humble-ament-xmllint \
+    ros-humble-xacro \
+    ros-humble-hardware-interface \
+    ros-humble-controller-manager \
+    ros-humble-diff-drive-controller \
+    ros-humble-joint-state-broadcaster \
+    ros-humble-ros2controlcli \
     cppcheck \
     uncrustify \
     && rm -rf /var/lib/apt/lists/*
