@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y \
     ros-humble-diff-drive-controller \
     ros-humble-joint-state-broadcaster \
     ros-humble-ros2controlcli \
+    ros-humble-joint-state-publisher \
+    ros-humble-joint-state-publisher-gui \
     cppcheck \
     uncrustify \
     && rm -rf /var/lib/apt/lists/*
