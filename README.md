@@ -1,7 +1,3 @@
-# TODO
-
-- Change REPO to local fork
-
 # ROS2 Humble Docker Demo
 
 This is the template for setting up and using ROS2 Humble in a Docker container.
