@@ -1,0 +1,8 @@
+services:
+  ros2-dev:
+    volumes:
+      - /mnt/wslg:/mnt/wslg:rw
+    environment:
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      - PULSE_SERVER=/mnt/wslg/PulseServer
