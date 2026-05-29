@@ -188,4 +188,8 @@ docker-compose down -v
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2026 UWRobotics. Note that the `src/ros_odrive` submodule is distributed under its own license (see `src/ros_odrive/LICENSE`).
+Copyright (c) 2026 UWRobotics.
+
+This repository bundles third-party components under their own licenses (see [NOTICE](NOTICE)):
+- `src/ros_odrive` (submodule) — MIT, © ODrive Robotics (see `src/ros_odrive/LICENSE`).
+- `src/osr_gazebo` — Apache-2.0, derived from the NASA JPL Open Source Rover (© 2018 California Institute of Technology) and dongjineee/rover_gazebo (see `src/osr_gazebo/LICENSE`).

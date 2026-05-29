@@ -16,9 +16,13 @@ services:
       - ./log:/ros2_ws/log:rw
       - ./scripts/build.sh:/ros2_ws/build.sh:rw
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /mnt/wslg:/mnt/wslg:rw
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/tmp/wslg-runtime
+      - PULSE_SERVER=/mnt/wslg/PulseServer
     network_mode: host
     stdin_open: true
     tty: true
